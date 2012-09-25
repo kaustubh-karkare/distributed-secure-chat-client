@@ -1,0 +1,9 @@
+Distributed Secure Chat Client
+
+Instead of requiring a specific designated server to relay messages between clients, this chat system uses peers to forward them. When a client comes online, it tries to connect with peers in the local subnet via UDP broadcasts. Once it does connect to an existing network, it will acquire the addresses of additional peers with which it will try and establish links with to increase the connectivity of the network. A "root" node is required in the network to maintain a central record of users for the purposes of authentication, and broadcast of heartbeat signals for synchronization purposes. A variation of the Needham Schroeder protocol is used for mutual authentication and establishment of a secure session key between to users who wish to communicate. The path that messages take to go from one client to another is dynamically determined based on the network topology and transparently recalculated in case any intermediate node goes down. Options for specifying certain other users as "friends" in order to be able to get information about whether or not they are online are also available.
+
+The "launch.bat" batch file can be used to start (multiple instances of) the program (on Windows) for testing purposes.
+
+This system is NOT scalable and was built purely for learning purposes.
+
+Creator : Kaustubh Karkare
